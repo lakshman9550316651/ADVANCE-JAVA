@@ -27,6 +27,7 @@ public class thread1 {
 		t2.start();
 		Thread.sleep(1);;
 		System.out.println("BYE--->");
+		System.out.println(Thread.currentThread()+"running");
 	}
 
 }
