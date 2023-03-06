@@ -10,8 +10,7 @@ class printthread extends Thread{
 		try{
 			for(int i=5;i>=1;i--) {
 				System.out.println(name +" "+i);
-				Thread.sleep(1000);
-
+				
 			}
 		}
 		catch(Exception e) {
@@ -27,16 +26,19 @@ public class test11 {
 		printthread t2=new printthread("second");
 		printthread t3=new printthread("third");
 		t1.start();
-		t2.start();
-		t3.start();
-		System.out.println("isAlive ....!");
+		System.out.println(t1.isAlive());
+		t1.join();
 		System.out.println(t1.isAlive());
 		System.out.println(t2.isAlive());
-		System.out.println(t3.isAlive());
-		
-		t1.join();
+		t2.start();
 		t2.join();
+		System.out.println(t2.isAlive());
+		System.out.println(t3.isAlive());
+		t3.start();
 		t3.join();
+		System.out.println(t3.isAlive());
+		                
+		System.out.println("After execuetion of code ---->");
 		System.out.println("isAlive ....!");
 		System.out.println(t1.isAlive());
 		System.out.println(t2.isAlive());
